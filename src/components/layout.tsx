@@ -12,15 +12,17 @@ import CheckoutResultPage from "pages/result";
 import { getSystemInfo } from "zmp-sdk";
 import { ScrollRestoration } from "./scroll-restoration";
 import { useHandlePayment } from "hooks";
+import VendorMachineReceiptPage from "pages/vendor-machine-receipt";
+import PromotionPage from "pages/promotion";
 
 if (getSystemInfo().platform === "android") {
   const androidSafeTop = Math.round(
     (window as any).ZaloJavaScriptInterface.getStatusBarHeight() /
-      window.devicePixelRatio,
+      window.devicePixelRatio
   );
   document.body.style.setProperty(
     "--zaui-safe-area-inset-top",
-    `${androidSafeTop}px`,
+    `${androidSafeTop}px`
   );
 }
 
@@ -37,8 +39,13 @@ export const Layout: FC = () => {
           <Route path="/category" element={<CategoryPage />}></Route>
           <Route path="/notification" element={<NotificationPage />}></Route>
           <Route path="/cart" element={<CartPage />}></Route>
+          <Route path="/promotion" element={<PromotionPage />}></Route>
           <Route path="/profile" element={<ProfilePage />}></Route>
           <Route path="/result" element={<CheckoutResultPage />}></Route>
+          <Route
+            path="/vendor-machine-receipt"
+            element={<VendorMachineReceiptPage />}
+          ></Route>
         </Routes>
       </Box>
       <Navigation />

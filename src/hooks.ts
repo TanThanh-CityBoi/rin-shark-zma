@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { matchStatusBarColor } from "utils/device";
 import { EventName, events, Payment } from "zmp-sdk";
 import { useNavigate, useSnackbar } from "zmp-ui";
+import { SnackbarOptions } from "zmp-ui/snackbar-provider";
 
 export function useMatchStatusTextColor(visible?: boolean) {
   const changedRef = useRef(false);
