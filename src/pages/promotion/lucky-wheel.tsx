@@ -38,17 +38,24 @@ const LuckyWheel: FC = () => {
   };
 
   const spinWheelHandler = () => {
+    if (isWheeling) return;
+    setIsWheeling(true);
     const randomIndex = Math.floor(Math.random() * items.length);
     const newRotate = currentRotate + 360 * 10;
     setCurrentRotate(newRotate);
     //
     rotateWheel(newRotate, randomIndex);
     setSelectedSector(items[randomIndex]);
+
+    setTimeout(() => {
+      setIsWheeling(false);
+    }, 7000);
   };
 
   const [selectedSector, setSelectedSector] = useState<any>(null);
   const [currentRotate, setCurrentRotate] = useState<any>(0);
   const [items, setItems] = useState<any>([]);
+  const [isWheeling, setIsWheeling] = useState<Boolean>(false);
 
   const itemSize = items.length;
   const rotate = 360 / itemSize;
@@ -67,6 +74,7 @@ const LuckyWheel: FC = () => {
       <div className="flex justify-center items-center w-full">
         <div
           id="wheel__container"
+          onClick={spinWheelHandler}
           style={{
             transition: "cubic-bezier(0.075, 0.8, 0.2, 1) 7s",
           }}
