@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "name": "Hà Giang - Đồng Văn - Mèo Vạc",
+    "price": 10000000,
+    "image": "https://ik.imagekit.io/tvlk/blog/2022/11/kinh-nghiem-du-lich-ha-giang-7-1024x684.jpg?tr=dpr-2,w-675",
+    "description": "There is a set of mock banners available <u>here</u> in three colours and in a range of standard banner sizes",
+    "categoryId": [],
+    "variantId": []
+  },
+  {
+    "id": 2,
+    "name": "Sapa - Lào Cai",
+    "price": 8500000,
+    "image": "https://cdn3.ivivu.com/2023/02/T%E1%BB%95ng-quan-du-l%E1%BB%8Bch-Sapa-ivivu.jpg",
+    "description": "Explore the stunning terraced rice fields and vibrant hill-tribe cultures of Sapa and Lào Cai.",
+    "categoryId": [],
+    "variantId": []
+  },
+  {
+    "id": 3,
+    "name": "Hội An - Đà Nẵng",
+    "price": 7200000,
+    "image": "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2017/08/pho-co-hoi-an-e1504760193217.jpg",
+    "description": "Wander through the ancient streets of Hội An and enjoy the beautiful beaches of Đà Nẵng.",
+    "categoryId": [],
+    "variantId": []
+  },
+  {
+    "id": 4,
+    "name": "Phú Quốc Island",
+    "price": 9000000,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQuhksdewD1ZRaxpJv6aIh1TmaO-m748vaQg&s",
+    "description": "Relax on the pristine beaches and explore the lush jungles of Phú Quốc Island.",
+    "categoryId": [],
+    "variantId": []
+  },
+  {
+    "id": 5,
+    "name": "Nha Trang",
+    "price": 6500000,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4UhXlHb5Y1jS1gXbL217KdXKQGG74iqs2RQ&s",
+    "description": "Dive into the crystal-clear waters and enjoy the vibrant nightlife of Nha Trang.",
+    "categoryId": [],
+    "variantId": []
+  },
+  {
+    "id": 6,
+    "name": "Đà Lạt",
+    "price": 7800000,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfKHj0lBuAr5cug_nzpwa4PIPokizC-qvVvw&s",
+    "description": "Experience the cool climate, stunning waterfalls, and French colonial architecture of Đà Lạt.",
+    "categoryId": [],
+    "variantId": []
+  },
+  {
+    "id": 7,
+    "name": "Huế - Huế Imperial City",
+    "price": 6000000,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCcnyY-zsKS6IFZl5i4ZDJ6HYrI5-BiPYTUA&s",
+    "description": "Explore the rich history and majestic architecture of Huế, including the Huế Imperial City.",
+    "categoryId": [],
+    "variantId": []
+  },
+  {
+    "id": 8,
+    "name": "Cần Thơ - Mekong Delta",
+    "price": 7200000,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfibTRxwB4qGVPjW53lWbE6wByBBAE0lqGcA&s",
+    "description": "Discover the vibrant floating markets and lush landscapes of Cần Thơ and the Mekong Delta.",
+    "categoryId": [],
+    "variantId": []
+  },
+  {
+    "id": 9,
+    "name": "Hạ Long Bay",
+    "price": 9500000,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIBHLOxUzrJQ85Maomu-mz0RHcfg9b-XfdJw&s",
+    "description": "Cruise through the breathtaking limestone islands and emerald waters of Hạ Long Bay.",
+    "categoryId": [],
+    "variantId": []
+  },
+  {
+    "id": 10,
+    "name": "Phong Nha - Kẻ Bàng National Park",
+    "price": 8500000,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWq6blSTjN-qWMFa6-TJ-k5a8mWXEQp6t4gg&s",
+    "description": "Explore the stunning caves and pristine jungles of Phong Nha - Kẻ Bàng National Park.",
+    "categoryId": [],
+    "variantId": []
+  }
+]

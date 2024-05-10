@@ -68,6 +68,32 @@ export const recommendProductsState = selector<Product[]>({
   },
 });
 
+export const servicesState = selector<Product[]>({
+  key: "services",
+  get: async () => {
+    await wait(2000);
+    const services = (await import("../mock/services.json")).default;
+    return services;
+  },
+});
+
+export const recommendServicesState = selector<Product[]>({
+  key: "recommendServices",
+  get: ({ get }) => {
+    const services = get(servicesState);
+    return services.slice(0, 4);
+  },
+});
+
+export const vouchersState = selector({
+  key: "vouchers",
+  get: async () => {
+    await wait(2000);
+    const vouchers = (await import("../mock/vouchers.json")).default;
+    return vouchers;
+  },
+});
+
 export const selectedCategoryIdState = atom({
   key: "selectedCategoryId",
   default: "coffee",
@@ -118,7 +144,7 @@ export const notificationsState = atom<Notification[]>({
       image: logo,
       title: "Chào bạn mới",
       content:
-        "Cảm ơn đã sử dụng ZaUI Coffee, bạn có thể dùng ứng dụng này để tiết kiệm thời gian xây dựng",
+        "Cảm ơn đã sử dụng Core Mart, bạn có thể dùng ứng dụng này để tiết kiệm thời gian xây dựng",
     },
     {
       id: 2,

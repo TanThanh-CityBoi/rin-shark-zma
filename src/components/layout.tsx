@@ -3,7 +3,6 @@ import { Route, Routes } from "react-router";
 import { Box } from "zmp-ui";
 import { Navigation } from "./navigation";
 import HomePage from "pages/index";
-import CategoryPage from "pages/category";
 import CartPage from "pages/cart";
 import NotificationPage from "pages/notification";
 import ProfilePage from "pages/profile";
@@ -14,6 +13,9 @@ import { ScrollRestoration } from "./scroll-restoration";
 import { useHandlePayment } from "hooks";
 import VendorMachineReceiptPage from "pages/vendor-machine-receipt";
 import PromotionPage from "pages/promotion";
+import ContactPage from "pages/contact";
+import ProductPage from "pages/product";
+import ServicePage from "pages/service";
 
 if (getSystemInfo().platform === "android") {
   const androidSafeTop = Math.round(
@@ -36,7 +38,7 @@ export const Layout: FC = () => {
         <Routes>
           <Route path="/" element={<HomePage />}></Route>
           <Route path="/search" element={<SearchPage />}></Route>
-          <Route path="/category" element={<CategoryPage />}></Route>
+          <Route path="/product" element={<ProductPage />}></Route>
           <Route path="/notification" element={<NotificationPage />}></Route>
           <Route path="/cart" element={<CartPage />}></Route>
           <Route path="/promotion" element={<PromotionPage />}></Route>
@@ -46,6 +48,8 @@ export const Layout: FC = () => {
             path="/vendor-machine-receipt"
             element={<VendorMachineReceiptPage />}
           ></Route>
+          <Route path="/contact" element={<ContactPage />}></Route>
+          <Route path="/service" element={<ServicePage />}></Route>
         </Routes>
       </Box>
       <Navigation />

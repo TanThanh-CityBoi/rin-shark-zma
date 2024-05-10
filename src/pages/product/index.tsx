@@ -30,7 +30,7 @@ const CategoryPicker: FC = () => {
 
 const CategoryProducts: FC<{ categoryId: string }> = ({ categoryId }) => {
   const productsByCategory = useRecoilValue(
-    productsByCategoryState(categoryId),
+    productsByCategoryState(categoryId)
   );
 
   if (productsByCategory.length === 0) {
@@ -51,13 +51,13 @@ const CategoryProducts: FC<{ categoryId: string }> = ({ categoryId }) => {
   );
 };
 
-const CategoryPage: FC = () => {
+const ProductPage: FC = () => {
   return (
     <Page className="flex flex-col">
-      <Header title="Danh mục" />
+      <Header title="Sản Phẩm" />
       <CategoryPicker />
     </Page>
   );
 };
 
-export default CategoryPage;
+export default ProductPage;

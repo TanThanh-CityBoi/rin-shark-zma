@@ -1,9 +1,9 @@
 import { useVirtualKeyboardVisible } from "hooks";
-import React, { FC, useMemo, useState } from "react";
+import React, { FC, useEffect, useMemo, useState } from "react";
 import { useLocation, useNavigate } from "react-router";
 import { MenuItem } from "types/menu";
 import { BottomNavigation, Icon } from "zmp-ui";
-import { CartIcon } from "./cart-icon";
+// import { CartIcon } from "./cart-icon";
 
 const tabs: Record<string, MenuItem> = {
   "/": {
@@ -11,17 +11,21 @@ const tabs: Record<string, MenuItem> = {
     icon: <Icon icon="zi-home" />,
   },
   "/notification": {
-    label: "Thông báo",
+    label: "Thông tin",
     icon: <Icon icon="zi-notif" />,
   },
-  "/promotion": {
-    label: "Ưu đãi",
-    icon: <Icon icon="zi-star" />,
-  },
-  "/cart": {
-    label: "Giỏ hàng",
-    icon: <CartIcon />,
-    activeIcon: <CartIcon active />,
+  // "/promotion": {
+  //   label: "Ưu đãi",
+  //   icon: <Icon icon="zi-star" />,
+  // },
+  // "/cart": {
+  //   label: "Giỏ hàng",
+  //   icon: <CartIcon />,
+  //   activeIcon: <CartIcon active />,
+  // },
+  "/contact": {
+    label: "Tin nhắn",
+    icon: <Icon icon="zi-chat"></Icon>,
   },
   "/profile": {
     label: "Cá nhân",
@@ -31,7 +35,13 @@ const tabs: Record<string, MenuItem> = {
 
 export type TabKeys = keyof typeof tabs;
 
-export const NO_BOTTOM_NAVIGATION_PAGES = ["/search", "/category", "/result"];
+export const NO_BOTTOM_NAVIGATION_PAGES = [
+  "/search",
+  "/product",
+  "/result",
+  "/service",
+  "/promotion",
+];
 
 export const Navigation: FC = () => {
   const [activeTab, setActiveTab] = useState<TabKeys>("/");
@@ -42,6 +52,12 @@ export const Navigation: FC = () => {
   const noBottomNav = useMemo(() => {
     return NO_BOTTOM_NAVIGATION_PAGES.includes(location.pathname);
   }, [location]);
+
+  useEffect(() => {
+    if (Object.keys(tabs).includes(location.pathname)) {
+      setActiveTab(location.pathname);
+    }
+  }, [location.pathname]);
 
   if (noBottomNav || keyboardVisible) {
     return <></>;

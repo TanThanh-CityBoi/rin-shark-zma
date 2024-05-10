@@ -12,7 +12,7 @@ export const Categories: FC = () => {
 
   const gotoCategory = (categoryId: string) => {
     setSelectedCategoryId(categoryId);
-    navigate("/category");
+    navigate("/product");
   };
 
   return (

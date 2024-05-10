@@ -2,8 +2,12 @@ import { createOrder } from "zmp-sdk";
 import { Option, Product } from "types/product";
 import { getConfig } from "./config";
 import { SelectedOptions } from "types/cart";
+import { Service } from "types/service";
 
-export function calcFinalPrice(product: Product, options?: SelectedOptions) {
+export function calcFinalPrice(
+  product: Product | Service,
+  options?: SelectedOptions
+) {
   let finalPrice = product.price;
   if (product.sale) {
     if (product.sale.type === "fixed") {
@@ -26,7 +30,7 @@ export function calcFinalPrice(product: Product, options?: SelectedOptions) {
           }
         } else {
           const selecteds = variant.options.filter((o) =>
-            currentOption.includes(o.id),
+            currentOption.includes(o.id)
           );
           selectedOptions.push(...selecteds);
         }
@@ -52,7 +56,7 @@ export function getDummyImage(filename: string) {
 
 export function isIdentical(
   option1: SelectedOptions,
-  option2: SelectedOptions,
+  option2: SelectedOptions
 ) {
   const option1Keys = Object.keys(option1);
   const option2Keys = Object.keys(option2);
