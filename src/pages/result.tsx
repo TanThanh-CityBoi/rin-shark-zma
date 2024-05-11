@@ -70,7 +70,10 @@ const CheckoutResultPage: FC = () => {
   if (paymentResult) {
     return (
       <Page className="flex flex-col">
-        <Header title="Kết quả thanh toán" />
+        <Header
+          title="Kết quả thanh toán"
+          className="bg-warning-600 text-white"
+        />
         {(function (render: (result: RenderResultProps) => ReactNode) {
           if ("resultCode" in paymentResult) {
             if (paymentResult.resultCode === 1) {

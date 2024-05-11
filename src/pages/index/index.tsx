@@ -6,9 +6,9 @@ import { BannerMenu } from "./banner-menu";
 import { FollowOA } from "./follow-oa";
 import { RecommendProduct } from "./recomend-product";
 import { RecommendService } from "./recomend-service";
-import { NewsList } from "./news";
 import { VoucherList } from "./voucher";
 
+// import { NewsList } from "./news";
 // import { Banner } from "./banner";
 // import { Inquiry } from "./inquiry";
 // import { Categories } from "./categories";
@@ -36,6 +36,8 @@ const HomePage: React.FunctionComponent = () => {
         <VoucherList />
 
         {/* <NewsList /> */}
+        <Divider />
+        <Divider />
         <Divider />
       </Box>
     </Page>

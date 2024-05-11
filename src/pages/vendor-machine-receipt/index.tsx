@@ -53,7 +53,12 @@ const VendorMachineReceiptPage: FC = () => {
 
   return (
     <Page>
-      <Header title="Hóa Đơn Core+ Mart" onBackClick={() => navigate("/")} />
+      <Header
+        title="Hóa Đơn Core+ Mart"
+        backIcon={<Icon icon="zi-chevron-left" className="text-white"></Icon>}
+        onBackClick={() => navigate("/")}
+        className="bg-warning-600 text-white"
+      />
       <Divider />
       <Box
         id="__receipt_print"

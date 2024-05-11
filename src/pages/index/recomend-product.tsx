@@ -56,7 +56,9 @@ export const RecommendContent: FC = () => {
                     )}
                   </Box>
                   <Box className="space-y-1">
-                    <Text size="small">{product.name}</Text>
+                    <Text size="small" className="line-clamp-1">
+                      {product.name}
+                    </Text>
                     <Text size="xxSmall" className="line-through text-gray">
                       <DisplayPrice>{product.price}</DisplayPrice>
                     </Text>

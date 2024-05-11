@@ -6,7 +6,7 @@ import { Box } from "zmp-ui";
 
 export const Banner: FC = () => {
   return (
-    <Box className="bg-white" pb={4}>
+    <Box className="py-2 mx-4 rounded-md neumorphism-flat-xs mt-2">
       <Swiper
         modules={[Pagination]}
         pagination={{

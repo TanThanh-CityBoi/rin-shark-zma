@@ -119,7 +119,7 @@ export const ProductPicker: FC<ProductPickerProps> = ({
             <Box className="space-y-6 mt-2" p={4}>
               <Box className="space-y-2">
                 <Text.Title>{product.name}</Text.Title>
-                <Text>
+                <Text className="text-warning-600 font-semibold">
                   <FinalPrice options={options}>{product}</FinalPrice>
                 </Text>
                 <Text>
@@ -166,7 +166,10 @@ export const ProductPicker: FC<ProductPickerProps> = ({
                     variant={quantity > 0 ? "primary" : "secondary"}
                     type={quantity > 0 ? "highlight" : "neutral"}
                     fullWidth
-                    onClick={addToCart}
+                    onClick={() => {
+                      // addToCart();
+                      setVisible(false);
+                    }}
                   >
                     {quantity > 0
                       ? selected
@@ -179,8 +182,12 @@ export const ProductPicker: FC<ProductPickerProps> = ({
                     disabled={!quantity}
                     variant="primary"
                     type="highlight"
+                    className="bg-gradient-to-r from-pricore-500 to-pricore-300"
                     fullWidth
-                    onClick={addToCart}
+                    onClick={() => {
+                      // addToCart();
+                      setVisible(false);
+                    }}
                   >
                     Thêm vào giỏ hàng
                   </Button>

@@ -23,7 +23,7 @@ export const BannerMenu: FC = () => {
     {
       label: "Ưu đãi",
       icon: promotionIcon,
-      url: "/promotion",
+      url: "/",
     },
     {
       label: "Liên hệ",
@@ -53,7 +53,8 @@ export const BannerMenu: FC = () => {
       className="bg-white relative overflow-hidden h-52 !bg-[#f5f5f5]"
       pb={4}
     >
-      <Box className="absolute -top-0 w-full h-12 scale-x-[1.1] rounded-b-full z-10 bg-warning-600"></Box>
+      <Box className="absolute -top-52 w-full h-52 z-10 bg-warning-600"></Box>
+      <Box className="absolute top-0 w-full h-20 rounded-b-[50%] z-10 bg-warning-600"></Box>
       <Box className="absolute top-1 bg-transparent w-full z-20 px-4">
         <Box className="h-full w-full rounded-lg bg-gradient-to-r from-pricore-500 to-pricore-300 shadow-md">
           <Box className="p-3">

@@ -6,7 +6,7 @@ import {
   productsByCategoryState,
   selectedCategoryIdState,
 } from "state";
-import { Box, Header, Page, Tabs, Text } from "zmp-ui";
+import { Box, Header, Icon, Page, Tabs, Text } from "zmp-ui";
 
 const CategoryPicker: FC = () => {
   const categories = useRecoilValue(categoriesState);
@@ -15,7 +15,7 @@ const CategoryPicker: FC = () => {
     <Tabs
       scrollable
       defaultActiveKey={selectedCategory}
-      className="category-tabs"
+      className="category-tabs rounded-md"
     >
       {categories.map((category) => (
         <Tabs.Tab key={category.id} label={category.name}>
@@ -35,7 +35,7 @@ const CategoryProducts: FC<{ categoryId: string }> = ({ categoryId }) => {
 
   if (productsByCategory.length === 0) {
     return (
-      <Box className="flex-1 bg-background p-4 flex justify-center items-center">
+      <Box className="flex-1 p-4 flex justify-center items-center bg-[#f5f5f5]">
         <Text size="xSmall" className="text-gray">
           Không có sản phẩm trong danh mục
         </Text>
@@ -43,9 +43,11 @@ const CategoryProducts: FC<{ categoryId: string }> = ({ categoryId }) => {
     );
   }
   return (
-    <Box className="bg-background grid grid-cols-2 gap-4 p-4">
+    <Box className="grid grid-cols-2 gap-4 p-4 bg-[#f5f5f5]">
       {productsByCategory.map((product) => (
-        <ProductItem key={product.id} product={product} />
+        <Box className="neumorphism-flat-xs rounded-md p-2" key={product.id}>
+          <ProductItem product={product} />
+        </Box>
       ))}
     </Box>
   );
@@ -54,7 +56,11 @@ const CategoryProducts: FC<{ categoryId: string }> = ({ categoryId }) => {
 const ProductPage: FC = () => {
   return (
     <Page className="flex flex-col">
-      <Header title="Sản Phẩm" />
+      <Header
+        title="Sản phẩm"
+        backIcon={<Icon icon="zi-chevron-left" className="text-white"></Icon>}
+        className="bg-warning-600 text-white"
+      />
       <CategoryPicker />
     </Page>
   );

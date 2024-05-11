@@ -2,18 +2,18 @@ import { useVirtualKeyboardVisible } from "hooks";
 import React, { FC, useEffect, useMemo, useState } from "react";
 import { useLocation, useNavigate } from "react-router";
 import { MenuItem } from "types/menu";
-import { BottomNavigation, Icon } from "zmp-ui";
-// import { CartIcon } from "./cart-icon";
+import { Text, BottomNavigation, Box, Icon } from "zmp-ui";
 
 const tabs: Record<string, MenuItem> = {
   "/": {
     label: "Trang chủ",
     icon: <Icon icon="zi-home" />,
+    activeIcon: <Icon icon="zi-home" className="text-warning-700" />,
   },
-  "/notification": {
-    label: "Thông tin",
-    icon: <Icon icon="zi-notif" />,
-  },
+  // "/notification": {
+  //   label: "Thông báo",
+  //   icon: <Icon icon="zi-notif" />,
+  // },
   // "/promotion": {
   //   label: "Ưu đãi",
   //   icon: <Icon icon="zi-star" />,
@@ -23,13 +23,20 @@ const tabs: Record<string, MenuItem> = {
   //   icon: <CartIcon />,
   //   activeIcon: <CartIcon active />,
   // },
+  "/news": {
+    label: "Tin tức",
+    icon: <Icon icon="zi-note" />,
+    activeIcon: <Icon icon="zi-note" className="text-warning-700" />,
+  },
   "/contact": {
     label: "Tin nhắn",
-    icon: <Icon icon="zi-chat"></Icon>,
+    icon: <Icon icon="zi-chat" />,
+    activeIcon: <Icon icon="zi-chat" className="text-warning-700" />,
   },
   "/profile": {
     label: "Cá nhân",
-    icon: <Icon icon="zi-user" />,
+    icon: <Icon icon="zi-user-circle" />,
+    activeIcon: <Icon icon="zi-user-circle" className="text-warning-700" />,
   },
 };
 
@@ -64,21 +71,30 @@ export const Navigation: FC = () => {
   }
 
   return (
-    <BottomNavigation
-      id="footer"
-      activeKey={activeTab}
-      onChange={(key: TabKeys) => setActiveTab(key)}
-      className="z-50"
-    >
-      {Object.keys(tabs).map((path: TabKeys) => (
-        <BottomNavigation.Item
-          key={path}
-          label={tabs[path].label}
-          icon={tabs[path].icon}
-          activeIcon={tabs[path].activeIcon}
-          onClick={() => navigate(path)}
-        />
-      ))}
-    </BottomNavigation>
+    <Box>
+      <BottomNavigation
+        id="footer"
+        activeKey={activeTab}
+        onChange={(key: TabKeys) => setActiveTab(key)}
+        className="z-50 bg-white h-16"
+      >
+        {Object.keys(tabs).map((path: TabKeys) => (
+          <BottomNavigation.Item
+            key={path}
+            label={
+              activeTab === path ? (
+                <span className="text-warning-700">{tabs[path].label}</span>
+              ) : (
+                tabs[path].label
+              )
+            }
+            icon={tabs[path].icon}
+            activeIcon={tabs[path].activeIcon}
+            onClick={() => navigate(path)}
+            className="mt-4"
+          />
+        ))}
+      </BottomNavigation>
+    </Box>
   );
 };
