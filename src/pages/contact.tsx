@@ -14,16 +14,21 @@ const ContactPage: FC = () => {
       if (!userInfo.followedOA) {
         await followOA({ id: OA_ID });
       }
+    } catch (error) {
+      console.log(error);
+    }
+
+    try {
       await openChat({
         type: "oa",
         id: OA_ID,
         message: "Xin Chào",
       });
-
-      navigate("/");
     } catch (error) {
       console.log(error);
     }
+
+    navigate("/");
   };
 
   useEffect(() => {

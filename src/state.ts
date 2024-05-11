@@ -16,6 +16,8 @@ import { Store } from "types/delivery";
 import { calcFinalPrice } from "utils/product";
 import { wait } from "utils/async";
 import categories from "../mock/categories.json";
+import { Service } from "types/service";
+import { News } from "types/news";
 
 export const authorizedState = selector({
   key: "authorized",
@@ -68,7 +70,7 @@ export const recommendProductsState = selector<Product[]>({
   },
 });
 
-export const servicesState = selector<Product[]>({
+export const servicesState = selector<Service[]>({
   key: "services",
   get: async () => {
     await wait(2000);
@@ -77,7 +79,7 @@ export const servicesState = selector<Product[]>({
   },
 });
 
-export const recommendServicesState = selector<Product[]>({
+export const recommendServicesState = selector<Service[]>({
   key: "recommendServices",
   get: ({ get }) => {
     const services = get(servicesState);
@@ -91,6 +93,15 @@ export const vouchersState = selector({
     await wait(2000);
     const vouchers = (await import("../mock/vouchers.json")).default;
     return vouchers;
+  },
+});
+
+export const newsState = selector<News[]>({
+  key: "news-list",
+  get: async () => {
+    await wait(2000);
+    const newsList = (await import("../mock/news.json")).default;
+    return newsList;
   },
 });
 

@@ -7,13 +7,14 @@ import { Navigation } from "./navigation";
 import { ScrollRestoration } from "./scroll-restoration";
 
 import HomePage from "pages/index";
+import NewsPage from "pages/news";
 import ProfilePage from "pages/profile";
 import ContactPage from "pages/contact";
 import ProductPage from "pages/product";
 import ServicePage from "pages/service";
-import NotificationPage from "pages/notification";
 import VendorMachineReceiptPage from "pages/vendor-machine-receipt";
 
+// import NotificationPage from "pages/notification";
 // import PromotionPage from "pages/promotion";
 // import SearchPage from "pages/search";
 // import CheckoutResultPage from "pages/result";
@@ -40,7 +41,7 @@ export const Layout: FC = () => {
         <Routes>
           {/* == */}
           <Route path="/" element={<HomePage />}></Route>
-          <Route path="/notification" element={<NotificationPage />}></Route>
+          <Route path="/news" element={<NewsPage />}></Route>
           <Route path="/contact" element={<ContactPage />}></Route>
           <Route path="/profile" element={<ProfilePage />}></Route>
           {/* == sub */}
@@ -51,7 +52,8 @@ export const Layout: FC = () => {
             element={<VendorMachineReceiptPage />}
           ></Route>
 
-          {/* <Route path="/search" element={<SearchPage />}></Route>
+          {/* <Route path="/notification" element={<NotificationPage />}></Route>
+          <Route path="/search" element={<SearchPage />}></Route>
           <Route path="/result" element={<CheckoutResultPage />}></Route>
           <Route path="/promotion" element={<PromotionPage />}></Route>
           <Route path="/cart" element={<CartPage />}></Route> */}

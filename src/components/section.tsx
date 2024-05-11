@@ -7,6 +7,7 @@ export interface SectionProps extends BoxProps {
   title: string;
   padding?: "all" | "none" | "title-only";
   titleClick?: Function;
+  viewMore?: Boolean;
 }
 
 export const Section: FC<PropsWithChildren<SectionProps>> = ({
@@ -15,6 +16,7 @@ export const Section: FC<PropsWithChildren<SectionProps>> = ({
   className,
   titleClick,
   padding = "all",
+  viewMore = true,
   ...props
 }) => {
   return (
@@ -41,10 +43,12 @@ export const Section: FC<PropsWithChildren<SectionProps>> = ({
           {title}
         </Text.Title>
 
-        <Box className="flex items-center text-warning-700">
-          <Text size="xxSmall">Xem thêm</Text>
-          <Icon icon="zi-chevron-right"></Icon>
-        </Box>
+        {viewMore && (
+          <Box className="flex items-center text-warning-700">
+            <Text size="xxSmall">Xem thêm</Text>
+            <Icon icon="zi-chevron-right"></Icon>
+          </Box>
+        )}
       </Box>
       {children}
     </Box>

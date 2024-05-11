@@ -38,6 +38,16 @@ export const ProductItemSkeleton: FC = () => {
   );
 };
 
+export const NewsItemSkeleton: FC = () => {
+  return (
+    <div className="space-y-2">
+      <ImageSkeleton className="w-full aspect-[2/1] rounded-lg" />
+      <TextSkeleton>1234567890</TextSkeleton>
+      <TextSkeleton size="xxSmall">20,000đ</TextSkeleton>
+    </div>
+  );
+};
+
 export const ProductSlideSkeleton: FC = () => {
   return (
     <div className="space-y-3">

@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "title": "Nhóm Nghiên Cứu Phát Hiện Loài Hoa Lan Mới trong Rừng Mưa Amazon",
+    "image": "https://example.com/orchid.jpg",
+    "description": "Một nhóm các nhà khoa học đã xác định được một loài hoa lan trước đây chưa được biết đến trong lòng rừng mưa Amazon.",
+    "url": "https://example.com/new-orchid-species"
+  },
+  {
+    "id": 2,
+    "title": "Bước Đột Phá trong Năng Lượng Tái Tạo: Tấm Năng Lượng Mặt Trời Tạo Ra Điện Vào Ban Đêm",
+    "image": "https://example.com/solar.jpg",
+    "description": "Một phát minh đột phá đã dẫn đến việc phát triển tấm năng lượng mặt trời có khả năng tạo ra điện ngay cả vào ban đêm.",
+    "url": "https://example.com/solar-night"
+  },
+  {
+    "id": 3,
+    "title": "Hội Nghị Chính Trị Lớn Kết Thúc với Thỏa Thuận Lịch Sử về Biến Đổi Khí Hậu",
+    "image": "https://example.com/climate.jpg",
+    "description": "Các nhà lãnh đạo thế giới tụ họp để đạt được một thỏa thuận lịch sử nhằm chống lại biến đổi khí hậu và giảm lượng khí thải carbon.",
+    "url": "https://example.com/climate-summit"
+  },
+  {
+    "id": 4,
+    "title": "Groundbreaking Medical Breakthrough: Gene Therapy Cures Rare Genetic Disorder",
+    "image": "https://example.com/gene-therapy.jpg",
+    "description": "Scientists achieve a major milestone in gene therapy, successfully curing a rare genetic disorder in human trials.",
+    "url": "https://example.com/gene-therapy-success"
+  },
+  {
+    "id": 5,
+    "title": "Space Exploration: New Mission Uncovers Evidence of Ancient Life on Mars",
+    "image": "https://example.com/mars.jpg",
+    "description": "NASA's latest mission to Mars reveals compelling evidence suggesting the presence of ancient microbial life on the red planet.",
+    "url": "https://example.com/mars-life"
+  },
+  {
+    "id": 6,
+    "title": "Tech Giant Unveils Revolutionary AI Assistant Capable of Human-like Conversations",
+    "image": "https://example.com/ai.jpg",
+    "description": "A leading tech company introduces an advanced AI assistant that can engage in natural and human-like conversations, setting a new standard for virtual assistants.",
+    "url": "https://example.com/human-ai"
+  },
+  {
+    "id": 7,
+    "title": "Global Economy Rebounds Strongly with Record Growth Rates",
+    "image": "https://example.com/economy.jpg",
+    "description": "The global economy experiences a remarkable resurgence, with record-breaking growth rates observed across various sectors and regions.",
+    "url": "https://example.com/global-recovery"
+  }
+]

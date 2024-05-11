@@ -3,10 +3,11 @@ import { Box, Page } from "zmp-ui";
 import { Welcome } from "./welcome";
 import { Divider } from "components/divider";
 import { BannerMenu } from "./banner-menu";
-import { FollowOA } from "./follow-oa";
+import { FollowOA } from "components/follow-oa";
 import { RecommendProduct } from "./recomend-product";
 import { RecommendService } from "./recomend-service";
 import { VoucherList } from "./voucher";
+import { NewsList } from "./news";
 
 // import { NewsList } from "./news";
 // import { Banner } from "./banner";
@@ -34,9 +35,9 @@ const HomePage: React.FunctionComponent = () => {
         <RecommendService />
         <Divider />
         <VoucherList />
-
-        {/* <NewsList /> */}
         <Divider />
+        <NewsList />
+
         <Divider />
         <Divider />
       </Box>

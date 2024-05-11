@@ -2,7 +2,6 @@ import { DisplayPrice } from "components/display/price";
 import React, { FC } from "react";
 import { Voucher } from "types/voucher";
 import { Box, Icon, Text } from "zmp-ui";
-import voucherImg from "static/voucher.png";
 
 export const VoucherItem: FC<{ voucher: Voucher }> = ({ voucher }) => {
   return (
@@ -10,7 +9,7 @@ export const VoucherItem: FC<{ voucher: Voucher }> = ({ voucher }) => {
       <Box
         className="relative aspect-video rounded-lg bg-cover bg-center bg-skeleton shadow-md mb-4"
         style={{
-          backgroundImage: `url(${voucher.image || voucherImg})`,
+          backgroundImage: `url(${voucher.image})`,
         }}
       ></Box>
 

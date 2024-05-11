@@ -5,6 +5,7 @@ import { ListRenderer } from "components/list-renderer";
 import { useToBeImplemented } from "hooks";
 import { userState } from "state";
 import { useRecoilValueLoadable } from "recoil";
+import { FollowOA } from "components/follow-oa";
 
 const Subscription: FC = () => {
   const onClick = useToBeImplemented();
@@ -139,6 +140,7 @@ const ProfilePage: FC = () => {
       <ProfileHeader />
       <Subscription />
       <Personal />
+      <FollowOA />
       <Other />
     </Page>
   );

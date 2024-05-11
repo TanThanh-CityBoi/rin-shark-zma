@@ -1,19 +1,40 @@
 import React, { FC, Suspense } from "react";
-import { Section } from "components/section";
 import { useRecoilValue } from "recoil";
-import { productsState } from "state";
+import { newsState } from "state";
 import { Box } from "zmp-ui";
-import { ProductItem } from "components/product/item";
-import { ProductItemSkeleton } from "components/skeletons";
+import { NewsItemSkeleton } from "components/skeletons";
+import { NewsItem } from "components/news/news-item";
+import { Section } from "components/section";
+import { openWebview } from "zmp-sdk";
 
 export const NewsListContent: FC = () => {
-  const products = useRecoilValue(productsState);
+  const newsList = useRecoilValue(newsState);
+
+  const openUrlInWebview = async (url: string) => {
+    try {
+      await openWebview({
+        url: url || "https://corevision.vn/",
+        config: {
+          style: "bottomSheet",
+          leftButton: "back",
+        },
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
-    <Section padding="title-only" title="Tin tức">
-      <Box className="grid grid-cols-2 gap-4 p-4">
-        {products.map((product) => (
-          <ProductItem key={product.id} product={product} />
+    <Section
+      title="Tin tức"
+      padding="title-only"
+      titleClick={() => openUrlInWebview("https://corevision.vn/ ")}
+    >
+      <Box className="grid grid-cols-1 gap-4 mx-4 pt-1">
+        {newsList.slice(0, 4).map((news) => (
+          <Box className="neumorphism-flat-xs rounded-md p-2" key={news.id}>
+            <NewsItem news={news} />
+          </Box>
         ))}
       </Box>
     </Section>
@@ -21,13 +42,15 @@ export const NewsListContent: FC = () => {
 };
 
 export const NewsListFallback: FC = () => {
-  const news = [...new Array(12)];
+  const newsList = [...new Array(12)];
 
   return (
     <Section title="Tin tức">
-      <Box className="grid grid-cols-2 gap-4">
-        {news.map((_, i) => (
-          <ProductItemSkeleton key={i} />
+      <Box className="grid grid-cols-1 gap-4">
+        {newsList.map((_, i) => (
+          <Box className="neumorphism-flat-xs rounded-md p-2" key={i}>
+            <NewsItemSkeleton />
+          </Box>
         ))}
       </Box>
     </Section>
