@@ -38,7 +38,7 @@ export const Section: FC<PropsWithChildren<SectionProps>> = ({
         <Text.Title
           className={`${
             padding === "title-only" ? "px-4" : ""
-          } bg-gradient-to-r from-pricore-500 to-pricore-300 inline-block text-transparent bg-clip-text`}
+          } bg-gradient-to-r from-[#16a34a] to-[#4ade80] inline-block text-transparent bg-clip-text font-bold`}
         >
           {title}
         </Text.Title>

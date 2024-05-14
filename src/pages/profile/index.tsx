@@ -1,25 +1,27 @@
-import React, { FC } from "react";
-import { Box, Header, Icon, Page, Text } from "zmp-ui";
+import React, { FC, useEffect, useRef, useState } from "react";
+import { Box, Button, Header, Icon, Page, Text, useSnackbar } from "zmp-ui";
 import subscriptionDecor from "static/subscription-decor.svg";
 import { ListRenderer } from "components/list-renderer";
-import { useToBeImplemented } from "hooks";
 import { userState } from "state";
 import { useRecoilValueLoadable } from "recoil";
 import { FollowOA } from "components/follow-oa";
+import { useNavigate } from "react-router";
+import { openUrlInWebview } from "utils/webview";
+import { getAppInfo, openShareSheet, saveImageToGallery } from "zmp-sdk";
+import html2canvas from "html2canvas";
 
 const Subscription: FC = () => {
-  const onClick = useToBeImplemented();
   return (
-    <Box className="m-4" onClick={onClick}>
+    <Box className="m-4 shadow-md rounded-lg" onClick={() => {}}>
       <Box
-        className="bg-green text-white rounded-xl p-4 space-y-2"
+        className="bg-green text-white rounded-lg p-4 space-y-2"
         style={{
           backgroundImage: `url(${subscriptionDecor})`,
           backgroundPosition: "right 8px center",
           backgroundRepeat: "no-repeat",
         }}
       >
-        <Text.Title className="font-bold">Đăng ký thành viên</Text.Title>
+        <Text.Title className="font-bold">Quyền lợi thành viên</Text.Title>
         <Text size="xxSmall">Tích điểm đổi thưởng, mở rộng tiện ích</Text>
       </Box>
     </Box>
@@ -27,18 +29,26 @@ const Subscription: FC = () => {
 };
 
 const Personal: FC = () => {
-  const onClick = useToBeImplemented();
+  const snackbar = useSnackbar();
 
   return (
-    <Box className="m-4">
+    <Box className="m-4 shadow-md rounded-lg">
       <ListRenderer
         title="Cá nhân"
-        onClick={onClick}
+        onClick={() => {}}
         items={[
           {
             left: <Icon icon="zi-user" />,
             right: (
-              <Box flex>
+              <Box
+                flex
+                onClick={() => {
+                  snackbar.openSnackbar({
+                    type: "success",
+                    text: "Chức năng đang được tích hợp phát triển...",
+                  });
+                }}
+              >
                 <Text.Header className="flex-1 items-center font-normal">
                   Thông tin tài khoản
                 </Text.Header>
@@ -49,7 +59,15 @@ const Personal: FC = () => {
           {
             left: <Icon icon="zi-clock-2" />,
             right: (
-              <Box flex>
+              <Box
+                flex
+                onClick={() => {
+                  snackbar.openSnackbar({
+                    type: "success",
+                    text: "Chức năng đang được tích hợp phát triển...",
+                  });
+                }}
+              >
                 <Text.Header className="flex-1 items-center font-normal">
                   Lịch sử đơn hàng
                 </Text.Header>
@@ -66,20 +84,23 @@ const Personal: FC = () => {
 };
 
 const Other: FC = () => {
-  const onClick = useToBeImplemented();
+  const navigate = useNavigate();
 
   return (
-    <Box className="m-4">
+    <Box className="m-4 shadow-md rounded-lg">
       <ListRenderer
         title="Khác"
-        onClick={onClick}
+        onClick={() => {}}
         items={[
           {
             left: <Icon icon="zi-star" />,
             right: (
-              <Box flex>
+              <Box
+                flex
+                onClick={() => openUrlInWebview("https://corevision.vn/")}
+              >
                 <Text.Header className="flex-1 items-center font-normal">
-                  Đánh giá đơn hàng
+                  Về Core Vision
                 </Text.Header>
                 <Icon icon="zi-chevron-right" />
               </Box>
@@ -88,7 +109,7 @@ const Other: FC = () => {
           {
             left: <Icon icon="zi-call" />,
             right: (
-              <Box flex>
+              <Box flex onClick={() => navigate("/contact")}>
                 <Text.Header className="flex-1 items-center font-normal">
                   Liên hệ và góp ý
                 </Text.Header>
@@ -134,14 +155,110 @@ const ProfileHeader: FC = () => {
   );
 };
 
+const AppQr: FC = () => {
+  const [appInfo, setAppInfo] = useState<any>(null);
+  const snackbar = useSnackbar();
+
+  const handleDownloadImage = async () => {
+    if (!appInfo?.qrCodeUrl) {
+      snackbar.openSnackbar({
+        type: "error",
+        text: "Lỗi tải hình ảnh",
+      });
+    }
+
+    saveImageToGallery({
+      imageUrl: appInfo.qrCodeUrl,
+      success: () => {
+        snackbar.openSnackbar({
+          type: "success",
+          text: "Đã tải xuống",
+        });
+      },
+      fail: (error) => {
+        snackbar.openSnackbar({
+          type: "error",
+          text: "Lỗi tải hình ảnh",
+        });
+      },
+    });
+  };
+  const handleShareApp = () => {
+    openShareSheet({
+      type: "link",
+      data: {
+        link: appInfo.appUrl,
+      },
+      success: (data) => {},
+      fail: (err) => {},
+    });
+  };
+
+  useEffect(() => {
+    getAppInfo({
+      success: (data) => {
+        setAppInfo(data);
+      },
+      fail: () => {
+        setAppInfo({});
+      },
+    });
+  }, []);
+
+  if (!appInfo) return <Box></Box>;
+  return (
+    <Box className="mx-4 mb-4 rounded-lg bg-white p-4 shadow-md">
+      <Text size="large" className="text-center mt-4">
+        {" "}
+        Giải pháp được phát triển bởi
+      </Text>
+      <Text size="large" className="text-center mb-4">
+        {" "}
+        Công ty cổ phần công nghệ Core Vision
+      </Text>
+      <Text size="large" className="text-center mb-6 italic font-semibold">
+        {'"Tiện lợi - Ổn định - Bền vững" '}
+      </Text>
+
+      <Box className="relative flex justify-center items-center mb-6">
+        <img className="h-52 w-52 aspect-square" src={appInfo?.qrCodeUrl}></img>
+        <img
+          className="absolute top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2 h-10 w-10 aspect-square rounded-md"
+          src={appInfo?.logoUrl}
+        ></img>
+      </Box>
+
+      <Box className="flex justify-center gap-x-4">
+        <Button
+          className="!bg-white text-gray !shadow-md"
+          size="medium"
+          onClick={() => handleDownloadImage()}
+        >
+          <Icon icon="zi-download" className="mr-2"></Icon>
+          Tải xuống
+        </Button>
+        <Button
+          className="!bg-white text-gray !shadow-md"
+          size="medium"
+          onClick={() => handleShareApp()}
+        >
+          <Icon icon="zi-share-external-2" className="mr-2"></Icon>
+          Chia sẻ
+        </Button>
+      </Box>
+    </Box>
+  );
+};
+
 const ProfilePage: FC = () => {
   return (
     <Page>
       <ProfileHeader />
       <Subscription />
-      <Personal />
       <FollowOA />
+      <Personal />
       <Other />
+      <AppQr />
     </Page>
   );
 };

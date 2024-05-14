@@ -19,7 +19,7 @@ export const Banner: FC = () => {
         {[1, 2, 3, 4, 5]
           .map((i) => getDummyImage(`banner-${i}.webp`))
           .map((banner, i) => (
-            <SwiperSlide key={i} className="px-4">
+            <SwiperSlide key={i} className="px-2">
               <Box
                 className="w-full rounded-lg aspect-[2/1] bg-cover bg-center bg-skeleton"
                 style={{ backgroundImage: `url(${banner})` }}

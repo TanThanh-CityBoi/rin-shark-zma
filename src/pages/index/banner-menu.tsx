@@ -6,7 +6,6 @@ import serviceIcon from "static/service-icon.png";
 import promotionIcon from "static/promotion-icon.png";
 import contactIcon from "static/contact-icon.png";
 import { useNavigate } from "react-router";
-import { openWebview } from "zmp-sdk";
 
 export const BannerMenu: FC = () => {
   const bannerMenuItems = [
@@ -34,20 +33,6 @@ export const BannerMenu: FC = () => {
 
   const navigate = useNavigate();
 
-  const openUrlInWebview = async () => {
-    try {
-      await openWebview({
-        url: "https://corevision.vn/",
-        config: {
-          style: "bottomSheet",
-          leftButton: "back",
-        },
-      });
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   return (
     <Box
       className="bg-white relative overflow-hidden h-52 !bg-[#f5f5f5]"
@@ -58,10 +43,7 @@ export const BannerMenu: FC = () => {
       <Box className="absolute top-1 bg-transparent w-full z-20 px-4">
         <Box className="h-full w-full rounded-lg bg-gradient-to-r from-pricore-500 to-pricore-300 shadow-md">
           <Box className="p-3">
-            <Box
-              className="flex justify-center"
-              onClick={() => openUrlInWebview()}
-            >
+            <Box className="flex justify-center">
               <img src={coreMartLogo} className="h-9"></img>
             </Box>
             <Text size="small" className="text-center text-white italic">
@@ -84,7 +66,10 @@ export const BannerMenu: FC = () => {
                       className="h-12 w-12 rounded-full object-contain bg-white"
                       src={item.icon}
                     />
-                    <Text size="xxSmall" className="text-gray text-center">
+                    <Text
+                      size="small"
+                      className="text-gray text-center font-semibold"
+                    >
                       {item.label}
                     </Text>
                   </div>

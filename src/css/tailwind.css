@@ -16,3 +16,20 @@
     transform: rotate(360deg);
   }
 }
+
+@keyframes tap {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.7);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.hand-tap-animate {
+  animation: tap 1s ease-out backwards;
+  animation-iteration-count: infinite;
+}

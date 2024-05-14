@@ -5,34 +5,24 @@ import { Box } from "zmp-ui";
 import { NewsItemSkeleton } from "components/skeletons";
 import { NewsItem } from "components/news/news-item";
 import { Section } from "components/section";
-import { openWebview } from "zmp-sdk";
+import { useNavigate } from "react-router";
 
 export const NewsListContent: FC = () => {
   const newsList = useRecoilValue(newsState);
-
-  const openUrlInWebview = async (url: string) => {
-    try {
-      await openWebview({
-        url: url || "https://corevision.vn/",
-        config: {
-          style: "bottomSheet",
-          leftButton: "back",
-        },
-      });
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  const navigate = useNavigate();
 
   return (
     <Section
       title="Tin tức"
       padding="title-only"
-      titleClick={() => openUrlInWebview("https://corevision.vn/ ")}
+      titleClick={() => navigate("/news")}
     >
       <Box className="grid grid-cols-1 gap-4 mx-4 pt-1">
         {newsList.slice(0, 4).map((news) => (
-          <Box className="neumorphism-flat-xs rounded-md p-2" key={news.id}>
+          <Box
+            className="neumorphism-flat-xs rounded-md p-2 bg-white"
+            key={news.id}
+          >
             <NewsItem news={news} />
           </Box>
         ))}

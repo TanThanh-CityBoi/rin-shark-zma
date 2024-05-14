@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React from "react";
 import { Box, Page } from "zmp-ui";
 import { Welcome } from "./welcome";
 import { Divider } from "components/divider";
@@ -7,7 +7,6 @@ import { FollowOA } from "components/follow-oa";
 import { RecommendProduct } from "./recomend-product";
 import { RecommendService } from "./recomend-service";
 import { VoucherList } from "./voucher";
-import { NewsList } from "./news";
 
 // import { NewsList } from "./news";
 // import { Banner } from "./banner";
@@ -15,6 +14,7 @@ import { NewsList } from "./news";
 // import { Categories } from "./categories";
 // import { Recommend } from "./recommend";
 // import { ProductList } from "./product-list";
+// import { NewsList } from "./news";
 
 const HomePage: React.FunctionComponent = () => {
   return (
@@ -29,14 +29,13 @@ const HomePage: React.FunctionComponent = () => {
 
         <BannerMenu />
         <FollowOA />
-        <Divider />
         <RecommendProduct />
         <Divider />
         <RecommendService />
         <Divider />
         <VoucherList />
         <Divider />
-        <NewsList />
+        {/* <NewsList /> */}
 
         <Divider />
         <Divider />

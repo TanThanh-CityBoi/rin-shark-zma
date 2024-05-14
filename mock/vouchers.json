@@ -3,42 +3,42 @@
     "id": 1,
     "name": "Phiếu Quà Tặng Core Mart",
     "price": 200000,
-    "image": "https://img.freepik.com/premium-vector/gift-card-icon-flat-style_157943-15.jpg"
+    "image": ""
   },
   {
     "id": 2,
     "name": "Thẻ Mua Hàng Trực Tuyến",
     "price": 150000,
-    "image": "https://www.dermlounge.com/wp-content/uploads/2022/11/Gift-Card.jpg"
+    "image": ""
   },
   {
     "id": 3,
     "name": "Phiếu Quà Tặng Sinh Nhật",
     "price": 300000,
-    "image": "https://www.dermlounge.com/wp-content/uploads/2022/11/Gift-Card.jpg"
+    "image": ""
   },
   {
     "id": 4,
     "name": "Phiếu Quà Tặng Giải Trí",
     "price": 180000,
-    "image": "https://www.vanilla.net.mt/cdn/shop/products/2-2.jpg?v=1691400122"
+    "image": ""
   },
   {
     "id": 5,
     "name": "Phiếu Quà Tặng Thẻ Game",
     "price": 250000,
-    "image": "https://www.vanilla.net.mt/cdn/shop/products/2-2.jpg?v=1691400122"
+    "image": ""
   },
   {
     "id": 6,
     "name": "Phiếu Quà Tặng Trải Nghiệm Thư Giãn",
     "price": 220000,
-    "image": "https://www.vanilla.net.mt/cdn/shop/products/2-2.jpg?v=1691400122"
+    "image": ""
   },
   {
     "id": 7,
     "name": "Phiếu Quà Tặng Thể Thao",
     "price": 180000,
-    "image": "https://img.freepik.com/premium-vector/gift-card-icon-flat-style_157943-15.jpg"
+    "image": ""
   }
 ]

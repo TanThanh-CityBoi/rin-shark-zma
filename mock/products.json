@@ -1,38 +1,54 @@
 [
   {
     "id": 1,
-    "name": "Caramel Latte",
-    "price": 35000,
-    "image": "https://stc-zmp.zadn.vn/templates/zaui-coffee/dummy/product-square-1.webp",
+    "name": "Dừa nước",
+    "price": 20000,
+    "image": "https://corevision.vn/wp-content/uploads/2024/05/MAT-DUA-NUOC-HUU-CO-VIETNIPA-JUICE-250ML-3.png",
     "description": "There is a set of mock banners available <u>here</u> in three colours and in a range of standard banner sizes",
-    "categoryId": ["coffee", "drinks"],
+    "sale": {
+      "type": "percent",
+      "percent": 0.2
+    },
+    "categoryId": ["drinks", "coconut"],
     "variantId": ["size", "topping"]
   },
   {
     "id": 2,
-    "name": "Mocha Frappuccino",
-    "price": 45000,
-    "image": "https://stc-zmp.zadn.vn/templates/zaui-coffee/dummy/product-square-2.webp",
+    "name": "Dừa tươi",
+    "price": 25000,
+    "image": "https://corevision.vn/wp-content/uploads/2023/08/bottle-of-coconut-water-and-fresh-ripe-fruits-on-g-2021-08-26-20-11-41-utc-scaled.jpg",
     "description": "There is a set of mock banners available <u>here</u> in three colours and in a range of standard banner sizes",
-    "categoryId": ["coffee"],
-    "variantId": ["size", "topping"]
+    "sale": {
+      "type": "percent",
+      "percent": 0.3
+    },
+    "categoryId": ["drinks", "coconut"],
+    "variantId": ["size"]
   },
   {
     "id": 3,
-    "name": "Grilled Pork Banh Mi",
+    "name": "Quà lưu niệm tết",
     "price": 30000,
-    "image": "https://stc-zmp.zadn.vn/templates/zaui-coffee/dummy/product-square-3.webp",
+    "image": "https://corevision.vn/wp-content/uploads/2023/09/323357239_1173120586901784_2796805018213425403_n.jpg",
     "description": "There is a set of mock banners available <u>here</u> in three colours and in a range of standard banner sizes",
-    "categoryId": ["food", "bread"],
+    "sale": {
+      "type": "percent",
+      "percent": 0.3
+    },
+    "categoryId": ["souvenir"],
     "variantId": ["size"]
   },
   {
     "id": 4,
-    "name": "Pizza",
+    "name": "Quà lưu niệm",
     "price": 28000,
-    "image": "https://stc-zmp.zadn.vn/templates/zaui-coffee/dummy/product-square-4.webp",
+    "image": "https://corevision.vn/wp-content/uploads/2023/09/323436532_6064295486967679_7014017842960934869_n.jpg",
     "description": "There is a set of mock banners available <u>here</u> in three colours and in a range of standard banner sizes",
-    "categoryId": ["food"],
+    "sale": {
+      "type": "percent",
+      "percent": 0.3
+    },
+    "categoryId": ["souvenir"],
     "variantId": ["size"]
   },
   {
@@ -76,10 +92,6 @@
     "name": "Bộ 3 Blue Corner Coffee siêu HOT",
     "image": "https://stc-zmp.zadn.vn/templates/zaui-coffee/dummy/product-rect-1.webp",
     "price": 25000,
-    "sale": {
-      "type": "percent",
-      "percent": 0.2
-    },
     "description": "There is a set of mock banners available <u>here</u> in three colours and in a range of standard banner sizes",
     "categoryId": ["coffee", "milktea", "drinks"],
     "variantId": ["size", "topping"]

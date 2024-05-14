@@ -28,7 +28,7 @@ export function ListRenderer<T>({
   }, [items]);
 
   return (
-    <Box className="bg-background rounded-xl">
+    <Box className="bg-background rounded-lg">
       {title && <Text.Title className="p-4 pb-0">{title}</Text.Title>}
       <Box>
         {(isCollapsed ? collapsedItems : items).map((item, i, list) => (

@@ -107,7 +107,7 @@ export const newsState = selector<News[]>({
 
 export const selectedCategoryIdState = atom({
   key: "selectedCategoryId",
-  default: "coffee",
+  default: "coconut",
 });
 
 export const productsByCategoryState = selectorFamily<Product[], string>({
